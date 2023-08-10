@@ -1,2 +1,5 @@
-package exceptions;public class TheKidIsAlreadyDeadException {
+package exceptions;
+public class TheKidIsAlreadyDeadException extends IllegalArgumentException{
+    public TheKidIsAlreadyDeadException() {
+    }
 }
