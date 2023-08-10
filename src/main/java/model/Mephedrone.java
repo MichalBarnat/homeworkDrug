@@ -13,4 +13,9 @@ public class Mephedrone extends Drug{
         super(name, ingredients, drugController);
         this.madeFace = madeFace;
     }
+
+    @Override
+    public double countPrice() {
+        return 40 + (3 * getIngredients().size());
+    }
 }

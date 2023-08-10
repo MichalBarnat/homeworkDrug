@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Drug {
+public abstract class Drug {
 
     private DrugController drugController;
 
@@ -31,9 +31,7 @@ public class Drug {
         this.drugController = drugController;
     }
 
-    public double countPrice(){
-        return 0;
-    };
+    public abstract double countPrice();
 
     public void checkDrug(Drug drug) {
         if (drugController.getQuality() == DrugQuality.POOR) {

@@ -19,4 +19,9 @@ public class LSD extends Drug{
         super(name, ingredients, drugController);
         this.numberOfDragons = numberOfDragons;
     }
+
+    @Override
+    public double countPrice() {
+        return 50 + (3 * getIngredients().size());
+    }
 }

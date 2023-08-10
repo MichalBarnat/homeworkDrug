@@ -19,4 +19,9 @@ public class MDMA extends Drug{
         super(name, ingredients, drugController);
         this.highDuration = highDuration;
     }
+
+    @Override
+    public double countPrice() {
+        return 60 + (3 * getIngredients().size());
+    }
 }
