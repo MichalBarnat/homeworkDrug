@@ -13,31 +13,35 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public abstract class Drug {
+public abstract class Drug implements DrugController {
 
-    private DrugController drugController;
+    //private DrugController drugController;
+    private DrugQuality drugQuality;
 
     private final String name;
     private double pricePerGram;
     private List<Ingredient> ingredients = new ArrayList<>();
 
-    public Drug(String name, List<Ingredient> ingredients, DrugController drugController) {
+    public Drug(String name, List<Ingredient> ingredients, DrugQuality drugQuality) {
         this.name = name;
         pricePerGram = countPrice();
         this.ingredients = ingredients;
         if(ingredients.size() < 3) {
             throw new CanNotCreateDrugFromLessThan3IngredientsException();
         }
-        this.drugController = drugController;
+        this.drugQuality = drugQuality;
+        //this.drugController = drugController;
     }
 
     public abstract double countPrice();
 
-    public void checkDrug(Drug drug) {
-        if (drugController.getQuality() == DrugQuality.POOR) {
-            throw new IWouldNotRiskExpception();
-        } else {
-            System.out.println("Go ahead!");
-        }
-    }
+    public abstract void checkDrug();
+
+//    public  void checkDrug(Drug drug) {
+//        if (drugQuality == DrugQuality.POOR) {
+//            throw new IWouldNotRiskExpception();
+//        } else {
+//            System.out.println("Go ahead!");
+//        }
+//    }
 }

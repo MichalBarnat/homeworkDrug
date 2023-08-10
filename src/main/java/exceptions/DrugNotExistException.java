@@ -1,2 +1,10 @@
-package exceptions;public class DrugNotExistException {
+package exceptions;
+
+public class DrugNotExistException extends RuntimeException {
+    public DrugNotExistException() {
+    }
+
+    public DrugNotExistException(String message) {
+        super(message);
+    }
 }

@@ -4,5 +4,7 @@ import model.DrugQuality;
 
 public interface DrugController {
 
-    DrugQuality getQuality();
+    // DrugQuality getQuality(); zle
+
+    void checkDrug();
 }

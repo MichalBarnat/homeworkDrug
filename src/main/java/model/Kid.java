@@ -1,5 +1,6 @@
 package model;
 
+import exceptions.DrugNotExistException;
 import exceptions.TheKidIsAlreadyDeadException;
 
 import java.util.ArrayList;
@@ -20,10 +21,13 @@ public class Kid {
     }
 
     public void buyDrug (Drug drug) {
-        takenDrugs.add(drug);
-        if(takenDrugs.size() > 5) {
+        if(drug == null) {
+            throw new DrugNotExistException();
+        }
+        if(takenDrugs.size() == 5) {
             throw new TheKidIsAlreadyDeadException();
         }
+        takenDrugs.add(drug);
     }
 
 

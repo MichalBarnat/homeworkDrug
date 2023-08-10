@@ -1,5 +1,6 @@
 package model;
 
+import exceptions.IWouldNotRiskExpception;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,13 +11,13 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class LSD extends Drug{
+public class LSD extends Drug {
 
     private int numberOfDragons;
 
 
-    public LSD(String name, List<Ingredient> ingredients, DrugController drugController, int numberOfDragons) {
-        super(name, ingredients, drugController);
+    public LSD(String name, List<Ingredient> ingredients, DrugQuality drugQuality, int numberOfDragons) {
+        super(name, ingredients, drugQuality);
         this.numberOfDragons = numberOfDragons;
     }
 
@@ -24,4 +25,15 @@ public class LSD extends Drug{
     public double countPrice() {
         return 50 + (3 * getIngredients().size());
     }
+
+    @Override
+    public void checkDrug() {
+        if (getDrugQuality() == DrugQuality.POOR) {
+            throw new IWouldNotRiskExpception();
+        } else {
+            System.out.println("Go ahead!");
+        }
+    }
+
+
 }
