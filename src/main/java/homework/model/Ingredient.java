@@ -1,4 +1,4 @@
-package model;
+package homework.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

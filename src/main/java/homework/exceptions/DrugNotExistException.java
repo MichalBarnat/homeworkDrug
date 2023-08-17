@@ -1,4 +1,4 @@
-package exceptions;
+package homework.exceptions;
 
 public class DrugNotExistException extends RuntimeException {
     public DrugNotExistException() {

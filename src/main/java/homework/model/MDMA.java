@@ -1,29 +1,28 @@
-package model;
+package homework.model;
 
-import exceptions.IWouldNotRiskExpception;
+import homework.exceptions.IWouldNotRiskExpception;
+import homework.interfaces.DrugContollerInterface;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import service.DrugController;
 
 import java.util.List;
 
 @Getter
 @Setter
 @ToString
-public class LSD extends Drug {
+public class MDMA extends Drug implements DrugContollerInterface {
 
-    private int numberOfDragons;
+    private int highDuration;
 
-
-    public LSD(String name, List<Ingredient> ingredients, DrugQuality drugQuality, int numberOfDragons) {
+    public MDMA(String name, List<Ingredient> ingredients, DrugQuality drugQuality, int highDuration) {
         super(name, ingredients, drugQuality);
-        this.numberOfDragons = numberOfDragons;
+        this.highDuration = highDuration;
     }
 
     @Override
     public double countPrice() {
-        return 50 + (3 * getIngredients().size());
+        return 60 + (3 * getIngredients().size());
     }
 
     @Override
@@ -34,6 +33,4 @@ public class LSD extends Drug {
             System.out.println("Go ahead!");
         }
     }
-
-
 }

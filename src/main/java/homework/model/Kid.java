@@ -1,7 +1,7 @@
-package model;
+package homework.model;
 
-import exceptions.DrugNotExistException;
-import exceptions.TheKidIsAlreadyDeadException;
+import homework.exceptions.DrugNotExistException;
+import homework.exceptions.TheKidIsAlreadyDeadException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +29,12 @@ public class Kid {
         }
         takenDrugs.add(drug);
     }
+
+    public void setTakenDrugs(List<Drug> takenDrugs) {
+        this.takenDrugs = takenDrugs;
+    }
+
+
 
 
 }

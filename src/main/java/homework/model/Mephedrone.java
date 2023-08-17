@@ -1,6 +1,7 @@
-package model;
+package homework.model;
 
-import exceptions.IWouldNotRiskExpception;
+import homework.exceptions.IWouldNotRiskExpception;
+import homework.interfaces.DrugContollerInterface;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,7 +12,7 @@ import java.util.List;
 @Setter
 @ToString
 
-public class Mephedrone extends Drug{
+public class Mephedrone extends Drug implements DrugContollerInterface {
 
     private String madeFace;
 
